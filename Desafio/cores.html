@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor e Exibir Nome</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div>
+        <div id="colorName">Clique no botão para ver a cor!</div>
+        <button onclick="changeColor()">Mudar Cor</button>
+    </div>
+
+    <script>
+        const colors = [
+            { name: 'Vermelho', hex: '#FF5733' },
+            { name: 'Verde', hex: '#28A745' },
+            { name: 'Azul', hex: '#007BFF' },
+            { name: 'Amarelo', hex: '#FFC107' },
+            { name: 'Roxo', hex: '#6F42C1' },
+            { name: 'Laranja', hex: '#FD7E14' },
+            { name: 'Ciano', hex: '#17A2B8' },
+            { name: 'Preto', hex: '#343A40' }
+        ];
+
+        function changeColor() {
+
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.style.backgroundColor = randomColor.hex;
+
+            document.getElementById('colorName').innerText = 'Cor: ' + randomColor.name;
+        }
+    </script>
+</body>
+</html>
